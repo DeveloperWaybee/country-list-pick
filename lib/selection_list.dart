@@ -141,7 +141,7 @@ class _SelectionListState extends State<SelectionList> {
                         width: 32.0,
                       ),
                       title: Text(widget.initialSelection.name),
-                      trailing: Icon(Icons.check, color: Colors.green),
+                      // trailing: Icon(Icons.check, color: Colors.green),
                     ),
                   ),
                   SizedBox(height: 15),
