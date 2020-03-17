@@ -20,14 +20,14 @@ class CountryListPick extends StatefulWidget {
 
   @override
   _CountryListPickState createState() {
-    List<Map> jsonList = codes;
+    final jsonList = codes.entries;
 
     List<CountryCode> elements = jsonList
         .map((s) => CountryCode(
-              name: s['name'],
-              code: s['code'],
-              dialCode: s['dial_code'],
-              flagUri: 'flags/${s['code'].toLowerCase()}.png',
+              name: s.value["country_name"],
+              code: s.key,
+              dialCode: s.value["dialling_code"],
+              flagUri: 'flags/${s.key.toLowerCase()}.png',
             ))
         .toList();
     return _CountryListPickState(elements);
