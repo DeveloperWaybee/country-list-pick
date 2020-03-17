@@ -11,12 +11,14 @@ class CountryListPick extends StatefulWidget {
       this.isShowFlag,
       this.isDownIcon,
       this.isShowTitle,
-      this.initialSelection});
+      this.initialSelection,
+      this.onTap});
   final bool isShowTitle;
   final bool isShowFlag;
   final bool isDownIcon;
   final String initialSelection;
   final ValueChanged<CountryCode> onChanged;
+  final Function onTap;
 
   @override
   _CountryListPickState createState() {
@@ -71,6 +73,7 @@ class _CountryListPickState extends State<CountryListPick> {
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: () {
+        widget.onTap();
         _awaitFromSelectScreen(context);
       },
       child: Flex(
